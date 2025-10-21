@@ -1,0 +1,39 @@
+# Disable directory browsing
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+
+    # Jika kamu pakai subfolder, aktifkan dan sesuaikan RewriteBase, contoh:
+    # RewriteBase /myapp/
+
+    # Redirect trailing slash (kecuali untuk folder yang ada)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Redirect www ke non-www dan https (kalau perlu)
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+    # Jangan redirect request ke folder assets agar CSS/JS tetap bisa diakses
+    RewriteCond %{REQUEST_URI} !^assets/
+
+    # Jika file atau folder tidak ada, redirect ke index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+
+    # Pastikan Authorization header diteruskan
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 index.php
+</IfModule>
+
+# Matikan signature server
+ServerSignature Off

@@ -1,0 +1,189 @@
+
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    outline : none;
+    border: none;
+    text-decoration: none;
+}
+
+.collapse .navbar-nav .nav-item .nav-link:hover{
+    color: #ffb606;
+}
+
+.landingpage{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-image: url('/assets/img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+}
+
+.landingpage::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,#111514 3%, rgba(255, 255, 255, 0 )25%);
+}
+
+.landingpage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(34, 44, 38, 0.729); 
+   
+}
+
+.isi {
+    padding: 1.4rem 15%;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-family: sans-serif;
+
+}
+
+.isi .font-effect-emboss{
+    color: #cccccc;
+}
+
+.landingpage .satu:hover{
+   background-color: #002147;
+   color: white;
+}
+.landingpage .btn{
+    margin: 0px 10px 0 10px;
+}
+
+.landingpage .dua{
+    background-color: #002147;
+    color: #ffffff;
+}
+
+.landingpage .dua:hover{
+    background: linear-gradient(0deg,#111514 3%, rgba(255, 255, 255, 0 )0%);
+    color: white;
+}
+
+.sejarah{
+    margin: 50px;
+    margin-bottom: 70px;
+}
+
+.container .sejarah .table th{
+    text-align: center;
+    justify-content: center;
+    background-color: #002147;
+    color: white
+}
+
+.container .sejarah #h1{
+    margin-bottom: 50px;
+    justify-content: center;
+    text-align: center;
+    font-family: sans-serif;
+    color: #002147;
+    font-size: 60px;
+}
+
+.visimisi {
+    background-color: #002147;
+}
+
+.isi-visimisi{
+   padding-bottom: 10px;
+}
+
+.isi-visimisi .visi{
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: #ffb606;
+}
+
+.isi-visimisi .misi{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: #ffb606;
+}
+
+
+.isi-visimisi p{
+    color: white;
+    margin-left: 30px;
+}
+
+.isi-visimisi li{
+    color: white;
+}
+
+.video-hymne{
+    display: flex;
+    align-items: center;
+}
+
+.video-hymne table{
+    width: 150%;
+    height: 0%;
+    text-align: center;
+}
+
+.video-hymne iframe{
+    width: 520px;
+    height: 280px;
+}
+
+.video-hymne p{
+    width: 200%;
+    color: white;
+    text-align: center;
+    padding-left: 50px
+}
+
+.ekstrakulikuler .row .col .col-xs-6{
+    color: #ffffff; 
+    height: 150px; 
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1023px) {
+    #gambarstruktur {
+        width: 450px;
+    }
+    .video-hymne{
+        display: inline;
+    }
+    .video-hymne table{
+        width:100%;
+        height: 0%;
+    }
+    .video-hymne iframe{
+        width: 100%;
+        height: 235px;
+    }
+    .video-hymne p{
+        width: 100%;
+        padding-left: 0;
+    }
+}
