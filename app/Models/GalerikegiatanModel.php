@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class GalerikegiatanModel extends Model
 {
-    protected $table            = 'galerikegiatan';
+    protected $table            = 'Galerikegiatan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

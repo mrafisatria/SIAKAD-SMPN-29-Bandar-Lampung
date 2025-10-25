@@ -48,11 +48,11 @@ class CreateGalerikegiatanTable extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('Galerikegiatan');
+        $this->forge->createTable('galerikegiatan');
     }
 
     public function down()
     {
-        $this->forge->dropTable('Galerikegiatan');
+        $this->forge->dropTable('galerikegiatan');
     }
 }
